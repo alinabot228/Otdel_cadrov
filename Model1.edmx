@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище алиначкаModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Вакансии">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Должность" Type="int" />
+          <Property Name="Компания" Type="int" />
+          <Property Name="Зарплата" Type="money" />
+          <Property Name="График_работы" Type="nchar" MaxLength="30" />
+          <Property Name="Сотрудник" Type="int" />
+        </EntityType>
+        <EntityType Name="Должности">
+          <Key>
+            <PropertyRef Name="IDДолжности" />
+          </Key>
+          <Property Name="IDДолжности" Type="int" Nullable="false" />
+          <Property Name="Название" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Компании">
+          <Key>
+            <PropertyRef Name="IDКомпании" />
+          </Key>
+          <Property Name="IDКомпании" Type="int" Nullable="false" />
+          <Property Name="Название" Type="nchar" MaxLength="30" />
+          <Property Name="Отрасль" Type="nchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Полы">
+          <Key>
+            <PropertyRef Name="IDПола" />
+          </Key>
+          <Property Name="IDПола" Type="int" Nullable="false" />
+          <Property Name="Пол" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Соискатели">
+          <Key>
+            <PropertyRef Name="IDСоискателя" />
+          </Key>
+          <Property Name="IDСоискателя" Type="int" Nullable="false" />
+          <Property Name="Фамилия" Type="nvarchar(max)" />
+          <Property Name="Имя" Type="nvarchar(max)" />
+          <Property Name="Отчество" Type="nvarchar(max)" />
+          <Property Name="Пол" Type="int" />
+          <Property Name="Возраст" Type="int" />
+          <Property Name="Город" Type="nvarchar(max)" />
+          <Property Name="Желаемая_должность" Type="int" />
+          <Property Name="Образование" Type="nvarchar(max)" />
+          <Property Name="Опыт_работы" Type="nvarchar(max)" />
+          <Property Name="Зарплата" Type="money" />
+        </EntityType>
+        <EntityType Name="Сотрудники">
+          <Key>
+            <PropertyRef Name="IDСотрудника" />
+          </Key>
+          <Property Name="IDСотрудника" Type="int" Nullable="false" />
+          <Property Name="Фамилия" Type="nvarchar(max)" />
+          <Property Name="Имя" Type="nvarchar(max)" />
+          <Property Name="Отчество" Type="nvarchar(max)" />
+          <Property Name="Пол" Type="int" />
+          <Property Name="Компания" Type="int" />
+          <Property Name="Город" Type="nvarchar(max)" />
+          <Property Name="Должность" Type="int" />
+          <Property Name="Соискатели" Type="int" />
+        </EntityType>
+        <Association Name="FK_Вакансии_Должности1">
+          <End Role="Должности" Type="Self.Должности" Multiplicity="0..1" />
+          <End Role="Вакансии" Type="Self.Вакансии" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Должности">
+              <PropertyRef Name="IDДолжности" />
+            </Principal>
+            <Dependent Role="Вакансии">
+              <PropertyRef Name="Должность" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Вакансии_Компании">
+          <End Role="Компании" Type="Self.Компании" Multiplicity="0..1" />
+          <End Role="Вакансии" Type="Self.Вакансии" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Компании">
+              <PropertyRef Name="IDКомпании" />
+            </Principal>
+            <Dependent Role="Вакансии">
+              <PropertyRef Name="Компания" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Вакансии_Сотрудники">
+          <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="0..1" />
+          <End Role="Вакансии" Type="Self.Вакансии" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Сотрудники">
+              <PropertyRef Name="IDСотрудника" />
+            </Principal>
+            <Dependent Role="Вакансии">
+              <PropertyRef Name="Сотрудник" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Соискатели_Должности">
+          <End Role="Должности" Type="Self.Должности" Multiplicity="0..1" />
+          <End Role="Соискатели" Type="Self.Соискатели" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Должности">
+              <PropertyRef Name="IDДолжности" />
+            </Principal>
+            <Dependent Role="Соискатели">
+              <PropertyRef Name="Желаемая_должность" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Соискатели_Полы">
+          <End Role="Полы" Type="Self.Полы" Multiplicity="0..1" />
+          <End Role="Соискатели" Type="Self.Соискатели" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Полы">
+              <PropertyRef Name="IDПола" />
+            </Principal>
+            <Dependent Role="Соискатели">
+              <PropertyRef Name="Пол" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Сотрудники_Должности">
+          <End Role="Должности" Type="Self.Должности" Multiplicity="0..1" />
+          <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Должности">
+              <PropertyRef Name="IDДолжности" />
+            </Principal>
+            <Dependent Role="Сотрудники">
+              <PropertyRef Name="Должность" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Сотрудники_Компании">
+          <End Role="Компании" Type="Self.Компании" Multiplicity="0..1" />
+          <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Компании">
+              <PropertyRef Name="IDКомпании" />
+            </Principal>
+            <Dependent Role="Сотрудники">
+              <PropertyRef Name="Компания" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Сотрудники_Полы">
+          <End Role="Полы" Type="Self.Полы" Multiplicity="0..1" />
+          <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Полы">
+              <PropertyRef Name="IDПола" />
+            </Principal>
+            <Dependent Role="Сотрудники">
+              <PropertyRef Name="Пол" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="remove_duplicate_spaces" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="table_name" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="Хранилище алиначкаModelContainer">
+          <EntitySet Name="Вакансии" EntityType="Self.Вакансии" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Должности" EntityType="Self.Должности" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Компании" EntityType="Self.Компании" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Полы" EntityType="Self.Полы" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Соискатели" EntityType="Self.Соискатели" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Сотрудники" EntityType="Self.Сотрудники" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Вакансии_Должности1" Association="Self.FK_Вакансии_Должности1">
+            <End Role="Должности" EntitySet="Должности" />
+            <End Role="Вакансии" EntitySet="Вакансии" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Вакансии_Компании" Association="Self.FK_Вакансии_Компании">
+            <End Role="Компании" EntitySet="Компании" />
+            <End Role="Вакансии" EntitySet="Вакансии" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Вакансии_Сотрудники" Association="Self.FK_Вакансии_Сотрудники">
+            <End Role="Сотрудники" EntitySet="Сотрудники" />
+            <End Role="Вакансии" EntitySet="Вакансии" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Соискатели_Должности" Association="Self.FK_Соискатели_Должности">
+            <End Role="Должности" EntitySet="Должности" />
+            <End Role="Соискатели" EntitySet="Соискатели" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Соискатели_Полы" Association="Self.FK_Соискатели_Полы">
+            <End Role="Полы" EntitySet="Полы" />
+            <End Role="Соискатели" EntitySet="Соискатели" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Сотрудники_Должности" Association="Self.FK_Сотрудники_Должности">
+            <End Role="Должности" EntitySet="Должности" />
+            <End Role="Сотрудники" EntitySet="Сотрудники" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Сотрудники_Компании" Association="Self.FK_Сотрудники_Компании">
+            <End Role="Компании" EntitySet="Компании" />
+            <End Role="Сотрудники" EntitySet="Сотрудники" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Сотрудники_Полы" Association="Self.FK_Сотрудники_Полы">
+            <End Role="Полы" EntitySet="Полы" />
+            <End Role="Сотрудники" EntitySet="Сотрудники" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="алиначкаModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Вакансии">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Должность" Type="Int32" Nullable="true" />
+          <Property Name="Компания" Type="Int32" Nullable="true" />
+          <Property Name="Зарплата" Type="Decimal" Precision="19" Scale="4" Nullable="true" />
+          <Property Name="График_работы" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="true" />
+          <Property Name="Сотрудник" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Должности" Relationship="Self.FK_Вакансии_Должности1" FromRole="Вакансии" ToRole="Должности" />
+          <NavigationProperty Name="Компании" Relationship="Self.FK_Вакансии_Компании" FromRole="Вакансии" ToRole="Компании" />
+          <NavigationProperty Name="Сотрудники" Relationship="Self.FK_Вакансии_Сотрудники" FromRole="Вакансии" ToRole="Сотрудники" />
+        </EntityType>
+        <EntityType Name="Должности">
+          <Key>
+            <PropertyRef Name="IDДолжности" />
+          </Key>
+          <Property Name="IDДолжности" Type="Int32" Nullable="false" />
+          <Property Name="Название" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Вакансии" Relationship="Self.FK_Вакансии_Должности1" FromRole="Должности" ToRole="Вакансии" />
+          <NavigationProperty Name="Соискатели" Relationship="Self.FK_Соискатели_Должности" FromRole="Должности" ToRole="Соискатели" />
+          <NavigationProperty Name="Сотрудники" Relationship="Self.FK_Сотрудники_Должности" FromRole="Должности" ToRole="Сотрудники" />
+        </EntityType>
+        <EntityType Name="Компании">
+          <Key>
+            <PropertyRef Name="IDКомпании" />
+          </Key>
+          <Property Name="IDКомпании" Type="Int32" Nullable="false" />
+          <Property Name="Название" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Отрасль" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Вакансии" Relationship="Self.FK_Вакансии_Компании" FromRole="Компании" ToRole="Вакансии" />
+          <NavigationProperty Name="Сотрудники" Relationship="Self.FK_Сотрудники_Компании" FromRole="Компании" ToRole="Сотрудники" />
+        </EntityType>
+        <EntityType Name="Полы">
+          <Key>
+            <PropertyRef Name="IDПола" />
+          </Key>
+          <Property Name="IDПола" Type="Int32" Nullable="false" />
+          <Property Name="Пол" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Соискатели" Relationship="Self.FK_Соискатели_Полы" FromRole="Полы" ToRole="Соискатели" />
+          <NavigationProperty Name="Сотрудники" Relationship="Self.FK_Сотрудники_Полы" FromRole="Полы" ToRole="Сотрудники" />
+        </EntityType>
+        <EntityType Name="Соискатели">
+          <Key>
+            <PropertyRef Name="IDСоискателя" />
+          </Key>
+          <Property Name="IDСоискателя" Type="Int32" Nullable="false" />
+          <Property Name="Фамилия" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Имя" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Отчество" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Пол" Type="Int32" />
+          <Property Name="Возраст" Type="Int32" />
+          <Property Name="Город" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Желаемая_должность" Type="Int32" />
+          <Property Name="Образование" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Опыт_работы" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Зарплата" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Должности" Relationship="Self.FK_Соискатели_Должности" FromRole="Соискатели" ToRole="Должности" />
+          <NavigationProperty Name="Полы" Relationship="Self.FK_Соискатели_Полы" FromRole="Соискатели" ToRole="Полы" />
+        </EntityType>
+        <EntityType Name="Сотрудники">
+          <Key>
+            <PropertyRef Name="IDСотрудника" />
+          </Key>
+          <Property Name="IDСотрудника" Type="Int32" Nullable="false" />
+          <Property Name="Фамилия" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Имя" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Отчество" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Пол" Type="Int32" />
+          <Property Name="Компания" Type="Int32" />
+          <Property Name="Город" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Должность" Type="Int32" />
+          <Property Name="Соискатели" Type="Int32" />
+          <NavigationProperty Name="Вакансии" Relationship="Self.FK_Вакансии_Сотрудники" FromRole="Сотрудники" ToRole="Вакансии" />
+          <NavigationProperty Name="Должности" Relationship="Self.FK_Сотрудники_Должности" FromRole="Сотрудники" ToRole="Должности" />
+          <NavigationProperty Name="Компании" Relationship="Self.FK_Сотрудники_Компании" FromRole="Сотрудники" ToRole="Компании" />
+          <NavigationProperty Name="Полы" Relationship="Self.FK_Сотрудники_Полы" FromRole="Сотрудники" ToRole="Полы" />
+        </EntityType>
+        <Association Name="FK_Вакансии_Должности1">
+          <End Role="Должности" Type="Self.Должности" Multiplicity="0..1" />
+          <End Role="Вакансии" Type="Self.Вакансии" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Должности">
+              <PropertyRef Name="IDДолжности" />
+            </Principal>
+            <Dependent Role="Вакансии">
+              <PropertyRef Name="Должность" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Вакансии_Компании">
+          <End Role="Компании" Type="Self.Компании" Multiplicity="0..1" />
+          <End Role="Вакансии" Type="Self.Вакансии" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Компании">
+              <PropertyRef Name="IDКомпании" />
+            </Principal>
+            <Dependent Role="Вакансии">
+              <PropertyRef Name="Компания" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Вакансии_Сотрудники">
+          <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="0..1" />
+          <End Role="Вакансии" Type="Self.Вакансии" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Сотрудники">
+              <PropertyRef Name="IDСотрудника" />
+            </Principal>
+            <Dependent Role="Вакансии">
+              <PropertyRef Name="Сотрудник" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Соискатели_Должности">
+          <End Role="Должности" Type="Self.Должности" Multiplicity="0..1" />
+          <End Role="Соискатели" Type="Self.Соискатели" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Должности">
+              <PropertyRef Name="IDДолжности" />
+            </Principal>
+            <Dependent Role="Соискатели">
+              <PropertyRef Name="Желаемая_должность" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Сотрудники_Должности">
+          <End Role="Должности" Type="Self.Должности" Multiplicity="0..1" />
+          <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Должности">
+              <PropertyRef Name="IDДолжности" />
+            </Principal>
+            <Dependent Role="Сотрудники">
+              <PropertyRef Name="Должность" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Сотрудники_Компании">
+          <End Role="Компании" Type="Self.Компании" Multiplicity="0..1" />
+          <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Компании">
+              <PropertyRef Name="IDКомпании" />
+            </Principal>
+            <Dependent Role="Сотрудники">
+              <PropertyRef Name="Компания" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Соискатели_Полы">
+          <End Role="Полы" Type="Self.Полы" Multiplicity="0..1" />
+          <End Role="Соискатели" Type="Self.Соискатели" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Полы">
+              <PropertyRef Name="IDПола" />
+            </Principal>
+            <Dependent Role="Соискатели">
+              <PropertyRef Name="Пол" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Сотрудники_Полы">
+          <End Role="Полы" Type="Self.Полы" Multiplicity="0..1" />
+          <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Полы">
+              <PropertyRef Name="IDПола" />
+            </Principal>
+            <Dependent Role="Сотрудники">
+              <PropertyRef Name="Пол" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="алиначкаEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Вакансии" EntityType="Self.Вакансии" />
+          <EntitySet Name="Должности" EntityType="Self.Должности" />
+          <EntitySet Name="Компании" EntityType="Self.Компании" />
+          <EntitySet Name="Полы" EntityType="Self.Полы" />
+          <EntitySet Name="Соискатели" EntityType="Self.Соискатели" />
+          <EntitySet Name="Сотрудники" EntityType="Self.Сотрудники" />
+          <AssociationSet Name="FK_Вакансии_Должности1" Association="Self.FK_Вакансии_Должности1">
+            <End Role="Должности" EntitySet="Должности" />
+            <End Role="Вакансии" EntitySet="Вакансии" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Вакансии_Компании" Association="Self.FK_Вакансии_Компании">
+            <End Role="Компании" EntitySet="Компании" />
+            <End Role="Вакансии" EntitySet="Вакансии" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Вакансии_Сотрудники" Association="Self.FK_Вакансии_Сотрудники">
+            <End Role="Сотрудники" EntitySet="Сотрудники" />
+            <End Role="Вакансии" EntitySet="Вакансии" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Соискатели_Должности" Association="Self.FK_Соискатели_Должности">
+            <End Role="Должности" EntitySet="Должности" />
+            <End Role="Соискатели" EntitySet="Соискатели" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Сотрудники_Должности" Association="Self.FK_Сотрудники_Должности">
+            <End Role="Должности" EntitySet="Должности" />
+            <End Role="Сотрудники" EntitySet="Сотрудники" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Сотрудники_Компании" Association="Self.FK_Сотрудники_Компании">
+            <End Role="Компании" EntitySet="Компании" />
+            <End Role="Сотрудники" EntitySet="Сотрудники" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Соискатели_Полы" Association="Self.FK_Соискатели_Полы">
+            <End Role="Полы" EntitySet="Полы" />
+            <End Role="Соискатели" EntitySet="Соискатели" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Сотрудники_Полы" Association="Self.FK_Сотрудники_Полы">
+            <End Role="Полы" EntitySet="Полы" />
+            <End Role="Сотрудники" EntitySet="Сотрудники" />
+          </AssociationSet>
+          <FunctionImport Name="remove_duplicate_spaces">
+            <Parameter Name="table_name" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище алиначкаModelContainer" CdmEntityContainer="алиначкаEntities">
+          <EntitySetMapping Name="Вакансии">
+            <EntityTypeMapping TypeName="алиначкаModel.Вакансии">
+              <MappingFragment StoreEntitySet="Вакансии">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Должность" ColumnName="Должность" />
+                <ScalarProperty Name="Компания" ColumnName="Компания" />
+                <ScalarProperty Name="Зарплата" ColumnName="Зарплата" />
+                <ScalarProperty Name="График_работы" ColumnName="График_работы" />
+                <ScalarProperty Name="Сотрудник" ColumnName="Сотрудник" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Должности">
+            <EntityTypeMapping TypeName="алиначкаModel.Должности">
+              <MappingFragment StoreEntitySet="Должности">
+                <ScalarProperty Name="IDДолжности" ColumnName="IDДолжности" />
+                <ScalarProperty Name="Название" ColumnName="Название" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Компании">
+            <EntityTypeMapping TypeName="алиначкаModel.Компании">
+              <MappingFragment StoreEntitySet="Компании">
+                <ScalarProperty Name="IDКомпании" ColumnName="IDКомпании" />
+                <ScalarProperty Name="Название" ColumnName="Название" />
+                <ScalarProperty Name="Отрасль" ColumnName="Отрасль" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Полы">
+            <EntityTypeMapping TypeName="алиначкаModel.Полы">
+              <MappingFragment StoreEntitySet="Полы">
+                <ScalarProperty Name="IDПола" ColumnName="IDПола" />
+                <ScalarProperty Name="Пол" ColumnName="Пол" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Соискатели">
+            <EntityTypeMapping TypeName="алиначкаModel.Соискатели">
+              <MappingFragment StoreEntitySet="Соискатели">
+                <ScalarProperty Name="IDСоискателя" ColumnName="IDСоискателя" />
+                <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+                <ScalarProperty Name="Имя" ColumnName="Имя" />
+                <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+                <ScalarProperty Name="Пол" ColumnName="Пол" />
+                <ScalarProperty Name="Возраст" ColumnName="Возраст" />
+                <ScalarProperty Name="Город" ColumnName="Город" />
+                <ScalarProperty Name="Желаемая_должность" ColumnName="Желаемая_должность" />
+                <ScalarProperty Name="Образование" ColumnName="Образование" />
+                <ScalarProperty Name="Опыт_работы" ColumnName="Опыт_работы" />
+                <ScalarProperty Name="Зарплата" ColumnName="Зарплата" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Сотрудники">
+            <EntityTypeMapping TypeName="алиначкаModel.Сотрудники">
+              <MappingFragment StoreEntitySet="Сотрудники">
+                <ScalarProperty Name="IDСотрудника" ColumnName="IDСотрудника" />
+                <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+                <ScalarProperty Name="Имя" ColumnName="Имя" />
+                <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+                <ScalarProperty Name="Пол" ColumnName="Пол" />
+                <ScalarProperty Name="Компания" ColumnName="Компания" />
+                <ScalarProperty Name="Город" ColumnName="Город" />
+                <ScalarProperty Name="Должность" ColumnName="Должность" />
+                <ScalarProperty Name="Соискатели" ColumnName="Соискатели" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="remove_duplicate_spaces" FunctionName="Хранилище алиначкаModel.remove_duplicate_spaces" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

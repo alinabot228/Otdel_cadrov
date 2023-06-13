@@ -1,0 +1,77 @@
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\WpfApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\App.g.cs
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\WpfApp1_Content.g.cs
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.cache
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+C:\Users\Node\source\repos\Project\WpfApp1\bin\Debug\WpfApp1.exe.config
+C:\Users\Node\source\repos\Project\WpfApp1\bin\Debug\WpfApp1.exe
+C:\Users\Node\source\repos\Project\WpfApp1\bin\Debug\WpfApp1.pdb
+C:\Users\Node\source\repos\Project\WpfApp1\bin\Debug\EntityFramework.dll
+C:\Users\Node\source\repos\Project\WpfApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Node\source\repos\Project\WpfApp1\bin\Debug\EntityFramework.xml
+C:\Users\Node\source\repos\Project\WpfApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Node\source\repos\Project\WpfApp1\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\EditVakansiiWindow.g.cs
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\EditVakansiiWindow.baml
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\MainWindow.baml
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\WpfApp1.g.resources
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\WpfApp1.exe
+C:\Users\Node\source\repos\Project\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\bin\Debug\EntityFramework.dll
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\bin\Debug\EntityFramework.xml
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\EditVakansiiWindow.g.cs
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\App.g.cs
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\EditVakansiiWindow.baml
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\MainWindow.baml
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\App.baml
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\bin\Debug\Табличный менеджмент базы.exe.config
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\bin\Debug\Табличный менеджмент базы.exe
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\bin\Debug\Табличный менеджмент базы.pdb
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\Табличный менеджмент базы_Content.g.cs
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\Табличный менеджмент базы_MarkupCompile.cache
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\Табличный менеджмент базы_MarkupCompile.lref
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\Табличный менеджмент базы.g.resources
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\Табличный менеджмент базы.exe
+C:\Users\Node\Desktop\Project\WpfApp1\WpfApp1\obj\Debug\Табличный менеджмент базы.pdb
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\bin\Debug\Табличный менеджмент базы.exe.config
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\bin\Debug\Табличный менеджмент базы.exe
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\bin\Debug\Табличный менеджмент базы.pdb
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\bin\Debug\EntityFramework.dll
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\bin\Debug\EntityFramework.xml
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.SuggestedBindingRedirects.cache
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\EditVakansiiWindow.g.cs
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\App.g.cs
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\Табличный менеджмент базы_Content.g.cs
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\Табличный менеджмент базы_MarkupCompile.cache
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\Табличный менеджмент базы_MarkupCompile.lref
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\App.baml
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\EditVakansiiWindow.baml
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\MainWindow.baml
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\Табличный менеджмент базы.g.resources
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\WpfApp1.Properties.Resources.resources
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.GenerateResource.cache
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\Табличный менеджмент базы.exe
+C:\Users\lidiy\Downloads\WpfApp1\WpfApp1\obj\Debug\Табличный менеджмент базы.pdb

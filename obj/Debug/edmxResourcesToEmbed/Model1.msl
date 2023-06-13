@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище алиначкаModelContainer" CdmEntityContainer="алиначкаEntities">
+    <EntitySetMapping Name="Вакансии">
+      <EntityTypeMapping TypeName="алиначкаModel.Вакансии">
+        <MappingFragment StoreEntitySet="Вакансии">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Должность" ColumnName="Должность" />
+          <ScalarProperty Name="Компания" ColumnName="Компания" />
+          <ScalarProperty Name="Зарплата" ColumnName="Зарплата" />
+          <ScalarProperty Name="График_работы" ColumnName="График_работы" />
+          <ScalarProperty Name="Сотрудник" ColumnName="Сотрудник" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Должности">
+      <EntityTypeMapping TypeName="алиначкаModel.Должности">
+        <MappingFragment StoreEntitySet="Должности">
+          <ScalarProperty Name="IDДолжности" ColumnName="IDДолжности" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Компании">
+      <EntityTypeMapping TypeName="алиначкаModel.Компании">
+        <MappingFragment StoreEntitySet="Компании">
+          <ScalarProperty Name="IDКомпании" ColumnName="IDКомпании" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+          <ScalarProperty Name="Отрасль" ColumnName="Отрасль" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Полы">
+      <EntityTypeMapping TypeName="алиначкаModel.Полы">
+        <MappingFragment StoreEntitySet="Полы">
+          <ScalarProperty Name="IDПола" ColumnName="IDПола" />
+          <ScalarProperty Name="Пол" ColumnName="Пол" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Соискатели">
+      <EntityTypeMapping TypeName="алиначкаModel.Соискатели">
+        <MappingFragment StoreEntitySet="Соискатели">
+          <ScalarProperty Name="IDСоискателя" ColumnName="IDСоискателя" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+          <ScalarProperty Name="Пол" ColumnName="Пол" />
+          <ScalarProperty Name="Возраст" ColumnName="Возраст" />
+          <ScalarProperty Name="Город" ColumnName="Город" />
+          <ScalarProperty Name="Желаемая_должность" ColumnName="Желаемая_должность" />
+          <ScalarProperty Name="Образование" ColumnName="Образование" />
+          <ScalarProperty Name="Опыт_работы" ColumnName="Опыт_работы" />
+          <ScalarProperty Name="Зарплата" ColumnName="Зарплата" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Сотрудники">
+      <EntityTypeMapping TypeName="алиначкаModel.Сотрудники">
+        <MappingFragment StoreEntitySet="Сотрудники">
+          <ScalarProperty Name="IDСотрудника" ColumnName="IDСотрудника" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+          <ScalarProperty Name="Пол" ColumnName="Пол" />
+          <ScalarProperty Name="Компания" ColumnName="Компания" />
+          <ScalarProperty Name="Город" ColumnName="Город" />
+          <ScalarProperty Name="Должность" ColumnName="Должность" />
+          <ScalarProperty Name="Соискатели" ColumnName="Соискатели" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="remove_duplicate_spaces" FunctionName="Хранилище алиначкаModel.remove_duplicate_spaces" />
+  </EntityContainerMapping>
+</Mapping>

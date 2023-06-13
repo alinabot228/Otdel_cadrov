@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3a4703f4ed3c4af1bacf20db5a44e076" Name="Diagram1" ShowGrid="true" DisplayType="true" ZoomLevel="84">
+        <EntityTypeShape EntityType="алиначкаModel.Вакансии" Width="2.25" PointX="3.875" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="алиначкаModel.Должности" Width="2.25" PointX="0.875" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="алиначкаModel.Компании" Width="2.375" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="алиначкаModel.Полы" Width="2.375" PointX="10" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="алиначкаModel.Соискатели" Width="2.625" PointX="3.875" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="алиначкаModel.Сотрудники" Width="2.5" PointX="7.875" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="алиначкаModel.FK_Вакансии_Должности1" ManuallyRouted="false" />
+        <AssociationConnector Association="алиначкаModel.FK_Вакансии_Компании" ManuallyRouted="false" />
+        <AssociationConnector Association="алиначкаModel.FK_Вакансии_Сотрудники" ManuallyRouted="false" />
+        <AssociationConnector Association="алиначкаModel.FK_Соискатели_Должности" ManuallyRouted="false" />
+        <AssociationConnector Association="алиначкаModel.FK_Сотрудники_Должности" ManuallyRouted="false" />
+        <AssociationConnector Association="алиначкаModel.FK_Сотрудники_Компании" ManuallyRouted="false" />
+        <AssociationConnector Association="алиначкаModel.FK_Соискатели_Полы" ManuallyRouted="false" />
+        <AssociationConnector Association="алиначкаModel.FK_Сотрудники_Полы" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,103 @@
+﻿<Window
+    x:Class="WpfApp1.EditVakansiiWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WpfApp1"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Изменение"
+    Width="400"
+    MinWidth="200"
+    Loaded="Window_Loaded"
+    SizeToContent="Height"
+    mc:Ignorable="d" WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label
+                Grid.Row="0"
+                Grid.Column="0"
+                Content="Id" />
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                Content="Должность" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="0"
+                Content="Компания" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="0"
+                Content="Зарплата" />
+            <Label
+                Grid.Row="4"
+                Grid.Column="0"
+                Content="График работы" />
+            <Label
+                Grid.Row="5"
+                Grid.Column="0"
+                Content="Сотрудник" />
+
+            <TextBox
+                x:Name="TextBoxId"
+                Grid.Row="0"
+                Grid.Column="1"
+                Text="{Binding ID}" />
+            <ComboBox
+                x:Name="ComboBoxДолжность"
+                Grid.Row="1"
+                Grid.Column="1"
+                DisplayMemberPath="Название"
+                ItemsSource="{Binding Должность}" />
+            <ComboBox
+                x:Name="ComboBoxКомпания"
+                Grid.Row="2"
+                Grid.Column="1"
+                DisplayMemberPath="Название"
+                ItemsSource="{Binding Компания}" />
+            <!--  SelectedValuePath="IDКомпании"  -->
+            <TextBox
+                x:Name="TextBoxЗарплата"
+                Grid.Row="3"
+                Grid.Column="1"
+                Text="{Binding Зарплата, StringFormat=0}" />
+            <TextBox
+                x:Name="TextBoxГрафикРаботы"
+                Grid.Row="4"
+                Grid.Column="1"
+                Text="{Binding График_работы}" />
+            <ComboBox
+                x:Name="ComboBoxСотрудник"
+                Grid.Row="5"
+                Grid.Column="1"
+                DisplayMemberPath="Фамилия"
+                ItemsSource="{Binding Сотрудник}" />
+        </Grid>
+        <StackPanel Orientation="Horizontal">
+            <Button
+                x:Name="ButtonOK"
+                Margin="5,5,0,5"
+                Padding="15,5"
+                Click="ButtonOK_Click"
+                Content="Ок" />
+            <Button
+                x:Name="ButtonCancel"
+                Margin="5,5,0,5"
+                Padding="15,5"
+                Click="ButtonCancel_Click"
+                Content="Отмена" />
+        </StackPanel>
+    </StackPanel>
+</Window>
